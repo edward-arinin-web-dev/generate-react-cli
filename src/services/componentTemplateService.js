@@ -291,9 +291,9 @@ const componentTemplateTypes = {
   TEST: 'withTest',
   STORY: 'withStory',
   LAZY: 'withLazy',
-  REDUCER: 'withReducer',
   ACTION: 'withAction',
   COMPONENT: 'component',
+  REDUCER: 'reducer',
 };
 
 // --- Template Map
