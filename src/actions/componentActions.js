@@ -27,9 +27,7 @@ function generateComponent(cmd, cliConfigFile, componentName) {
 
     if (
       (cmd[componentTemplateType] && cmd[componentTemplateType].toString() === 'true') ||
-      componentTemplateType === componentTemplateTypes.COMPONENT ||
-      componentTemplateType === componentTemplateTypes.ACTION ||
-      componentTemplateType === componentTemplateTypes.REDUCER
+      componentTemplateType === componentTemplateTypes.COMPONENT
     ) {
       const template = getComponentTemplate(cmd, cliConfigFile, componentName, componentTemplateType);
 
