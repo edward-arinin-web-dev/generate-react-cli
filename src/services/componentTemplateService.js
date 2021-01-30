@@ -15,6 +15,8 @@ const componentTestDefaultTemplate = require('../templates/component/componentTe
 const componentTestTestingLibraryTemplate = require('../templates/component/componentTestTestingLibraryTemplate');
 const reducerTsTemplate = require('../templates/component/reducerTsTemplate');
 const actionTsTemplate = require('../templates/component/actionTsTemplate');
+const reducerJsTemplate = require('../templates/component/reducerJsTemplate');
+const actionJsTemplate = require('../templates/component/actionJsTemplate');
 
 // private
 
@@ -102,7 +104,7 @@ function getReducerTemplate({ cmd, cliConfigFile, componentName, componentPathDi
   let fileExtension = usesTypeScript ? 'tsx' : 'js';
   let template = null;
 
-  // Check for a custom component template.
+  // Check for a custom reducer template.
 
   if (customTemplates && customTemplates.reducer) {
     // --- Load and use the custom component template
@@ -114,7 +116,7 @@ function getReducerTemplate({ cmd, cliConfigFile, componentName, componentPathDi
   } else {
     // --- Else use GRC built-in component template
 
-    template = usesTypeScript ? reducerTsTemplate : componentJsTemplate;
+    template = usesTypeScript ? reducerTsTemplate : reducerJsTemplate;
 
     template = template.replace(` className={styles.TemplateName}`, '');
     template = template.replace(`import styles from './TemplateName.module.css';`, '');
@@ -146,7 +148,7 @@ function getActionTemplate({ cmd, cliConfigFile, componentName, componentPathDir
   } else {
     // --- Else use GRC built-in component template
 
-    template = usesTypeScript ? actionTsTemplate : componentJsTemplate;
+    template = usesTypeScript ? actionTsTemplate : actionJsTemplate;
 
     template = template.replace(` className={styles.TemplateName}`, '');
     template = template.replace(`import styles from './TemplateName.module.css';`, '');
@@ -289,9 +291,9 @@ const componentTemplateTypes = {
   TEST: 'withTest',
   STORY: 'withStory',
   LAZY: 'withLazy',
+  REDUCER: 'withReducer',
+  ACTION: 'withAction',
   COMPONENT: 'component',
-  REDUCER: 'reducer',
-  ACTION: 'action',
 };
 
 // --- Template Map
