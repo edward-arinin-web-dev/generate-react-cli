@@ -12,6 +12,7 @@ module.exports = async function cli(args) {
 
   program.version(pkg.version);
 
+  console.log(args);
   // --- Generate redux
 
   if (isReduxCmd) {
