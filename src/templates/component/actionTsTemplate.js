@@ -1,18 +1,9 @@
-module.exports = `
-import { createAction } from "@reduxjs/toolkit"
+module.exports = `import { createAction } from "@reduxjs/toolkit"
 
-// export interface ITemplateName {}
+// export interface Iuser {}
 
-export const createTemplateName = createAction<{ params: any }>(
-  "TemplateName/create"
-)
-export const readTemplateName = createAction<{ params: any }>(
-  "TemplateName/read"
-)
-export const updateTemplateName = createAction<{ params: any }>(
-  "TemplateName/update"
-)
-export const deleteTemplateName = createAction<{ params: any }>(
-  "TemplateName/delete"
-)
+export const createuser = createAction<{ params: any }>("user/create")
+export const readuser = createAction<{ params: any }>("user/read")
+export const updateuser = createAction<{ params: any }>("user/update")
+export const deleteuser = createAction<{ params: any }>("user/delete")
 `;

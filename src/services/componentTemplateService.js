@@ -156,8 +156,8 @@ function getActionTemplate({ cmd, cliConfigFile, componentName, componentPathDir
 
   return {
     template,
-    templateType: `Action "${componentName}/action.${fileExtension}"`,
-    componentPath: `${componentPathDir}/action.${fileExtension}`,
+    templateType: `actions "${componentName}/actions.${fileExtension}"`,
+    componentPath: `${componentPathDir}/actions.${fileExtension}`,
     componentName,
   };
 }

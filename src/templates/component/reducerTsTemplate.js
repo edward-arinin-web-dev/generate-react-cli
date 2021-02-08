@@ -1,29 +1,24 @@
-module.exports = `
-import { createReducer } from "@reduxjs/toolkit"
-import {
-  createTemplateName,
-  readTemplateName,
-  updateTemplateName,
-  deleteTemplateName,
-} from "./actions"
+module.exports = `import { createReducer } from "@reduxjs/toolkit"
+import { createuser, readuser, updateuser, deleteuser } from "./actions"
 
-export interface TemplateNameState {}
+export interface userState {}
 
-export const initialState: TemplateNameState = {}
+export const initialState: userState = {}
 
 export default createReducer(initialState, (builder) =>
   builder
-    .addCase(createTemplateName, (state, action) => {
+    .addCase(createuser, (state, action) => {
       //
     })
-    .addCase(readTemplateName, (state, action) => {
+    .addCase(readuser, (state, action) => {
       //
     })
-    .addCase(updateTemplateName, (state, action) => {
+    .addCase(updateuser, (state, action) => {
       //
     })
-    .addCase(deleteTemplateName, (state, action) => {
+    .addCase(deleteuser, (state, action) => {
       //
     })
 )
+
 `;
