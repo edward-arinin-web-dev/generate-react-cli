@@ -5,7 +5,7 @@ const {
   getComponentTemplate,
 } = require('../services/componentTemplateService');
 
-function generateReducer(cmd, cliConfigFile, componentName) {
+function generateRedux(cmd, cliConfigFile, componentName) {
   const componentTemplates = [];
 
   // --- Make sure component name is valid.
@@ -28,7 +28,7 @@ function generateReducer(cmd, cliConfigFile, componentName) {
     console.log(componentTemplateType);
     if (
       (cmd[componentTemplateType] && cmd[componentTemplateType].toString() === 'true') ||
-      componentTemplateType === componentTemplateTypes.REDUCER
+      componentTemplateType === componentTemplateTypes.REDUX
     ) {
       const template = getComponentTemplate(cmd, cliConfigFile, componentName, componentTemplateType);
 
@@ -42,5 +42,5 @@ function generateReducer(cmd, cliConfigFile, componentName) {
 }
 
 module.exports = {
-  generateReducer,
+  generateRedux,
 };

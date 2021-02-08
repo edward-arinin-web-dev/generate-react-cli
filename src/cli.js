@@ -2,19 +2,19 @@ const chalk = require('chalk');
 const program = require('commander');
 const pkg = require('../package.json');
 const { generateComponent } = require('./actions/componentActions');
-const { generateReducer } = require('./actions/reducerActions');
+const { generateRedux } = require('./actions/reduxActions');
 const { componentLevelQuestions, getCLIConfigFile } = require('./services/grcConfigService');
 
 module.exports = async function cli(args) {
   const cliConfigFile = await getCLIConfigFile();
   const isComponentCmd = args.find((arg) => arg.includes('c') || arg.includes('component'));
-  const isReducerCmd = args.find((arg) => arg.includes('r') || arg.includes('reducer'));
+  const isReduxCmd = args.find((arg) => arg.includes('r') || arg.includes('redux'));
 
   program.version(pkg.version);
 
-  // --- Generate reducer
+  // --- Generate redux
 
-  if (isReducerCmd) {
+  if (isReduxCmd) {
     const hasComponentTypeOption = args.find((arg) => arg.includes('--type'));
     let component = null;
 
@@ -79,7 +79,7 @@ Otherwise you won't be able to use your "${chalk.bold(componentType)}" component
       )
 
       .action((componentNames, cmd) =>
-        componentNames.forEach((componentName) => generateReducer(cmd, cliConfigFile, componentName))
+        componentNames.forEach((componentName) => generateRedux(cmd, cliConfigFile, componentName))
       );
   }
 
