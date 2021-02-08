@@ -7,8 +7,8 @@ const { componentLevelQuestions, getCLIConfigFile } = require('./services/grcCon
 
 module.exports = async function cli(args) {
   const cliConfigFile = await getCLIConfigFile();
-  const isComponentCmd = args.find((arg) => arg.includes('c') || arg.includes('component'));
-  const isReduxCmd = args.find((arg) => arg.includes('r') || arg.includes('redux'));
+  const isComponentCmd = args.find((arg) => arg.includes('component'));
+  const isReduxCmd = args.find((arg) => arg.includes('redux'));
 
   program.version(pkg.version);
 
