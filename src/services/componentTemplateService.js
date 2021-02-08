@@ -293,7 +293,7 @@ const componentTemplateTypes = {
   LAZY: 'withLazy',
   ACTION: 'withAction',
   COMPONENT: 'component',
-  REDUCER: 'reducer',
+  REDUX: 'redux',
 };
 
 // --- Template Map
@@ -304,7 +304,7 @@ const templateMap = {
   [componentTemplateTypes.STORY]: getComponentStoryTemplate,
   [componentTemplateTypes.LAZY]: getComponentLazyTemplate,
   [componentTemplateTypes.COMPONENT]: getComponentScriptTemplate,
-  [componentTemplateTypes.REDUCER]: getReducerTemplate,
+  [componentTemplateTypes.REDUX]: getReducerTemplate,
   [componentTemplateTypes.ACTION]: getActionTemplate,
 };
 
