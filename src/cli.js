@@ -69,8 +69,8 @@ Otherwise you won't be able to use your "${chalk.bold(componentType)}" component
     }
 
     program
-      .command('component [names...]')
-      .alias('c')
+      .command('redux [names...]')
+      .alias('r')
 
       .option('-p, --path <path>', 'The path where the component will get generated in.', component.path)
       .option('--withAction <withAction>', 'With corresponding lazy file.', component.withAction)
