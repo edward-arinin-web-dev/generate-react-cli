@@ -12,11 +12,8 @@ module.exports = async function cli(args) {
 
   program.version(pkg.version);
 
-  console.log(args);
   // --- Generate redux
-
   if (isReduxCmd) {
-    console.log('redux', isReduxCmd);
     const hasComponentTypeOption = args.find((arg) => arg.includes('--type'));
     let component = null;
 
@@ -25,7 +22,7 @@ module.exports = async function cli(args) {
 
       // if the component type does not exists in the cliConfigFile under `component` throw an error
 
-      if (!cliConfigFile.component[componentType]) {
+      if (!cliConfigFile.redux[componentType]) {
         console.error(
           chalk.red(
             `
@@ -49,7 +46,7 @@ ${chalk.bold('generate-react-cli.json')} config file under the ${chalk.bold('com
 
         // if the component type has a missing required property throw an error
 
-        if (cliConfigFile.component[componentType][requiredComponentTypeProperty] === undefined) {
+        if (cliConfigFile.redux[componentType][requiredComponentTypeProperty] === undefined) {
           console.error(
             chalk.red(`
 ERROR: "${chalk.bold(requiredComponentTypeProperty)}" is a required property, and it is missing 
@@ -63,9 +60,9 @@ Otherwise you won't be able to use your "${chalk.bold(componentType)}" component
         }
       });
 
-      component = cliConfigFile.component[componentType];
+      component = cliConfigFile.rdeux[componentType];
     } else {
-      component = cliConfigFile.component.default;
+      component = cliConfigFile.redux.default;
     }
 
     program
@@ -88,7 +85,6 @@ Otherwise you won't be able to use your "${chalk.bold(componentType)}" component
   // --- Generate component
 
   if (isComponentCmd) {
-    console.log('component', isComponentCmd);
     const hasComponentTypeOption = args.find((arg) => arg.includes('--type'));
     let component = null;
 
