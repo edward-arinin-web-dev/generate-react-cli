@@ -16,6 +16,7 @@ module.exports = async function cli(args) {
   // --- Generate redux
 
   if (isReduxCmd) {
+    console.log('redux', isReduxCmd);
     const hasComponentTypeOption = args.find((arg) => arg.includes('--type'));
     let component = null;
 
@@ -87,6 +88,7 @@ Otherwise you won't be able to use your "${chalk.bold(componentType)}" component
   // --- Generate component
 
   if (isComponentCmd) {
+    console.log('component', isComponentCmd);
     const hasComponentTypeOption = args.find((arg) => arg.includes('--type'));
     let component = null;
 
